@@ -3,7 +3,7 @@ funnyText.js
 ![preview](https://raw.github.com/alvarotrigo/funnyText.js/master/imgs/intro1.jpg)
 Create funny and crazy moving texts in a simple way.
 
-- [Living Demo](https://www.omarproductions.com/projectsData/responsiveFunnyText/index.html)
+- [Living Demo](http://www.omarproductions.com/projectsData/responsiveFunnyText/index.html)
 - [Temporal website](http://alvarotrigo.com/blog/creating-funnytext-js-plugin-for-jquery/)
 
 ## Usage
