@@ -8,7 +8,7 @@
 
 (function($){
 	$.fn.funnyText = function(options){
-		
+
 		// Create some defaults, extending them with any options that were provided
 		options = $.extend({
 			'speed': 700,
@@ -20,13 +20,13 @@
 		}, options);
 
 		var that = $(this);
-		
+
 		that.addClass('funnyText');
-		
+
 		var original = $(this);
 		var characters = $.trim(original.text()).split('');
-		
-		
+
+
 		var positionsY = ['top', 'bottom'];
 		var positionsX = ['left', 'right'];
 
@@ -49,10 +49,10 @@
 			if(characters[i]  == ' '){
 				characters[i] = '&nbsp;';
 			}
-			
+
 			var visibleChar = '<span class="normal  ' + normalPositionY + ' ' + normalPositionX + '">' + characters[i] + '</span>';
 
-			//avoid repeating the same values two consecutive letters 
+			//avoid repeating the same values two consecutive letters
 			do{
 				activePositionXY = getNewPosition(normalPositionX, normalPositionY);
 			}while(activePositionXY == previousPosition && options.direction == 'both');
@@ -65,12 +65,12 @@
 			original.append(newChar);
 		};
 
-		
+
 		//setting the width and height of each character to its wrapper
 		that.find('.charWrap').each(function (){
 			var sizeX = $(this).find('span').outerWidth();
 			var sizeY = $(this).find('span').outerHeight();
-		
+
 			$(this).css({
 				'width': sizeX * 2 + 'px',
 				'height': sizeY * 2 + 'px'
@@ -79,7 +79,7 @@
 			//adjusting the wrappers positions
 			setMargin($(this));
 
-			//creating the "viewport" for each character. 
+			//creating the "viewport" for each character.
 			$(this).wrap('<div class="character" style="width:' + sizeX + 'px; height: ' + sizeY + 'px"></div>');
 		});
 
@@ -91,15 +91,15 @@
 			return from + Math.floor(Math.random() * (to +1));
 		}
 
-		
+
 		/**
-		* Gets a new position for the active character in a way it can be scrolled 
+		* Gets a new position for the active character in a way it can be scrolled
 		* vertically or horizontally from the position of the original character.
 		* (from top left to botom right wouldn't work, for example)
 		*/
 		function getNewPosition(x, y){
 			var result;
-			
+
 			if((getRandom(0, 100) % 2 && options.direction == 'both') || options.direction == 'horizontal') {
 				if(x == "right" && y == "top"){
 					result = "left top moveLeft";
@@ -125,9 +125,9 @@
 			return result;
 		}
 
-		
+
 		/**
-		* Sets the margin for the characters container depending on the position 
+		* Sets the margin for the characters container depending on the position
 		* of the characters to show.
 		*/
 		function setMargin(obj){
@@ -159,7 +159,7 @@
 			setTimer(that.find('.charWrap').eq(num), randomTime);
 		}, 1 * options.speed);
 
-		
+
 		/**
 		* Sets a timer for a given character for a given time.
 		*/
@@ -175,7 +175,7 @@
 			}
 		});
 
-		
+
 		/**
 		* Moves a character to the destination position.
 		* Once reached, it will add a class "moved" as an  status indicator.
@@ -212,8 +212,8 @@
 					}
 				}
 			}
-			
-			//jquery fallback 
+
+			//jquery fallback
 			else{
 				if(character.hasClass('moveRight')){
 					if(!characterWrap.hasClass('moved')){
@@ -261,9 +261,9 @@
 			characterWrap.toggleClass('moved');
 		}
 	};
-	
-	
-		
+
+
+
 	/**
 	 * jQuery.support.cssProperty
 	 * To verify that a CSS property is supported (or any of its browser-specific implementations)
