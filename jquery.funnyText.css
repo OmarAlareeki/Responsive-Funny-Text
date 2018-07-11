@@ -1,9 +1,43 @@
+
+body, html{
+    margin:0;
+    padding:0;
+    height:100%;
+    background: #ddd;
+    background-image: url(imgs/grain.png);
+    font-family: 'Chela One', cursive;
+}
+.text1, .text2{
+    text-align: center;
+}
+.text1 span {
+    background-color: #DFE2DB;
+}
+.text1 span.active {
+    background-color: #000;
+    color: #fff;
+}
+.text2 span.active {
+    background-color: #3B3738;
+}
+.table{
+    display:table;
+    width:100%;
+    height: 100%;
+
+}
+.tableCell{
+    display:table-cell;
+    vertical-align: middle;
+    width:100%;
+    height: 100%;
+}
 .charWrap {
     display:inline-block;
     position:relative;
     overflow: hidden;
 }
-.funnyText span.left, 
+.funnyText span.left,
 .funnyText span.right,
 .funnyText span.top,
 .funnyText span.bottom {
@@ -31,3 +65,4 @@
     overflow:hidden;
     display:inline-block;
 }
+
