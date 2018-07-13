@@ -42,7 +42,7 @@ $(document).ready(function() {
 		borderColor: 'black',
 		activeColor: 'white',
 		color: 'black',
-		fontSize: '7em',
+		fontSize: '7em', // if you have a small device to display the funny text, you can choose a reduced size.
 		direction: 'both'
 	});
 });
