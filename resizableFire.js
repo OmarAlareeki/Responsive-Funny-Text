@@ -1,6 +1,6 @@
 $('body').resizabletext({
-   minimum   : 500,          // minimum window resize
-   maximum   : 1200,         // maximum window resize
+   minimum   : 600,          // minimum window resize
+   maximum   : 1400,         // maximum window resize
    minFont   : 12,           // minimum font to display
    maxFont   : 40,           // maximum font to display
    fontRatio : 30
